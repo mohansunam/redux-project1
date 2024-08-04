@@ -1,12 +1,12 @@
 import React from 'react'
-import { createBrowserRouter } from 'react-router-dom'
-import RootLayout from './ui/RootLayout'
-import Home from './features/dashboard/Home'
-import { blogSlice } from './blogs/blogSlice'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import RootLayout from './ui/RootLayout';
+import Blogs from './features/blog/Blogs';
+
 
 
 const App = () => {
-  console.log(blogSlice);
+
   const router = createBrowserRouter([
     {
       path:'/',
@@ -14,7 +14,7 @@ const App = () => {
       children: [
         {
         index: true,
-        element: <Home/> 
+        element: <Blogs/> 
 
       }]
 
@@ -22,6 +22,10 @@ const App = () => {
   }])
   return (
     <div>
+    <RouterProvider router={router}/>
+     
+  
+        
    
     </div>
   )
